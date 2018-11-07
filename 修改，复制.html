@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <!--<div class="box">-->
+        <!--<h1 id="h1">我是一号标题</h1>-->
+    <!--</div>-->
+
+    <div class="box">
+
+    </div>
+    <button>复制</button>
+</body>
+<script src="./jquery.js"></script>
+<script>
+    //用什么去代替
+    // let h2 = $('<h2>我是二号标题</h2>')
+    // $('#h1').replaceWith(h2)
+//    h2代替h1的全部
+//     h2.replaceAll('#h1')
+    $('.box').click(function () {
+        console.log($(this));
+    })
+    $('button').click(function () {
+        //不带true 他自身带的时间不能复制
+        let boxClone = $('.box').clone(true)
+        $('body').append(boxClone)
+    })
+</script>
+</html>

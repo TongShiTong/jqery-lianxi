@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="box">
+        <div id="child">我是元素</div>
+    </div>
+</body>
+<script src="./jquery.js"></script>
+<script>
+    var h1 = $('<h1>我是标题</h1>')
+    // $('.box').append(h1)
+
+    //和上面的一样的结果, 插入后面
+    // h1.appendTo($(".box"))
+
+    //插入什么之前
+    // $('.box').prepend(h1)
+    // h1.prependTo('.box')
+
+
+    //下面是兄弟之间
+    // h1.insertBefore('#child')
+    // $('#child').before(h1)
+
+    // h1.insertAfter('#child')
+    $('#child').after(h1)
+</script>
+</html>

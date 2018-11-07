@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            height: 100px;
+            width: 100px;
+            border: 1px solid #000;
+            margin: 10px 0;
+            background: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">动起来</button>
+    <button id="btn1">标记动的元素</button>
+    <div class="box" title="header"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <h1>标题1</h1>
+    <h2>标题2</h2>
+    <h3>标题3</h3>
+</body>
+<script src="jquery.js"></script>
+<script>
+    // console.log($('.box'));
+//    可以用数组[0]判断选中没有
+//     if($('.box')[0]) {
+//         console.log('有')
+//         console.log($('.box')[0])
+//         $('.box').css({
+//             width: 100,
+//             height: 100,
+//             background: '#f00'
+//         })
+//     }
+
+    //命中两个
+    // $('.box').css({
+    //     backgroundColor: '#f00'
+    // })
+
+    //用css3命中一个
+    // $('.box:nth-child(1)').css({
+    //     backgroundColor: '#f00'
+    // })
+
+//    用jquery命中一个可以$('.box:eq(1)')，从0开始
+//     $('.box').eq(1).css({
+//         background: '#f00'
+//     })
+
+//    命中快捷方式,还有last
+//     $('.box:first').css({
+//         background: "#f00"
+//     })
+
+//    取反
+//     $('.box:not("[title=header]")').css({
+//         background: "#f00"
+//     })
+
+//    偶数是even, 从0开始
+//     $('.box:odd').css({
+//         background: "#f00"
+//     })
+
+//    gt是大于, lt是小于
+//     $('.box:gt(0)').css({
+//             background: "#f00"
+//         })
+
+//    header是选中标题
+//     $(':header').css('color', '#ff0')
+
+//    动画,循环 一次2秒
+    function go() {
+        //先变长
+        $('.box').eq(1).animate({width: 500}, 2000, 'swing',
+        //     function () {
+        //     console.log('动画完成了')
+        // }
+        )
+    //    再变短
+        $('.box').eq(1).animate({width: 100}, 2000, 'swing', go)
+
+    }
+
+    $('#btn').click(function () {
+        go()
+    })
+    $('#btn1').click(function () {
+        $(':animated').css("backgroundColor", "#f00")
+    })
+
+</script>
+</html>

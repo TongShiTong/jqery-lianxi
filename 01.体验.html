@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            background: #f00;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+  <div class="box"></div>
+</body>
+<script src="./jquery.js"></script>
+<script>
+    // $('.box').css('height', '300')
+    // console.log($('.box').css('background'));
+
+    // $('.box').css('width', '300px')
+
+    $('.box').css({
+        width: 300,
+        marginTop: 200,
+        'margin-left': 200
+    })
+</script>
+</html>
