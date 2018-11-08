@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button id="btn">添加</button>
+    <input type="text" id="input">
+    <ul class="box">
+        <li>我是内容</li>
+    </ul>
+</body>
+<script src="./jquery.js"></script>
+<script>
+    let btn = document.querySelector('#btn')
+    let input = document.querySelector('#input')
+    let lis = Array.from(document.querySelectorAll('li'))
+    let ul = document.querySelector('.box')
+
+    btn.onclick = function () {
+        let value = input.value
+        let newLi = document.createElement('li')
+        // newLi.onclick = function(){
+        //     alert(this.innerText)
+        // }
+        newLi.innerText = value
+        ul.appendChild(newLi)
+        input.value = ''
+    }
+
+    // lis.forEach(li => {
+    //     li.onclick = function () {
+    //         alert(this.innerText)
+    //     }
+    // })
+
+
+//   用父元素代理,委托父元素
+    ul.onclick = function (event) {
+        if(event.target.nodeName == 'LI'){
+            alert(event.target.innerText)
+        }
+    }
+</script>
+</html>

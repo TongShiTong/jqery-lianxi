@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .box {
+            background: #f00;
+            border: 1px solid #000;
+            width: 200px;
+            height: 100px;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+
+    </div>
+</body>
+<script src="./jquery.js"></script>
+<script>
+    console.log('盒子的宽度：' + $('.box').width())
+    console.log('盒子的高度：' + $('.box').height())
+    console.log('盒子的宽度加内边距：' + $('.box').innerWidth())
+    console.log('盒子的高度加内边距：' + $('.box').innerHeight())
+    console.log('盒子的宽度加内边距加边框：' + $('.box').outerWidth())
+    console.log('盒子的宽度加内边距加边框加外边距：' + $('.box').outerWidth(true))
+</script>
+</html>

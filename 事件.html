@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--用户名： <input type="text" id="input">-->
+<!--<textarea name="" id="text" cols="30" rows="10"></textarea>-->
+
+<!--<p>文字</p>-->
+
+手机号：<input type="tel" id="phone">
+</body>
+<script src="./jquery.js"></script>
+<script>
+    //ul事件
+    //select
+    //scroll
+    //resize
+    
+    // $('#text').select(function () {
+    //     console.log($(this).val())
+    // })
+    
+    // $(window).resize(function () {
+    //     let clientWidth = document.documentElement.clientWidth
+    //     //文字随着屏幕大小改变
+    //     $('p').css('font-size', clientWidth * 0.1)
+    // })
+
+//    失焦事件
+    let reg = /^1[3-8]\d{9}$/
+    $('#phone').blur(function () {
+        let $value = $(this).val()
+
+        let end = reg.test($value)
+
+        if(end) {
+            $('#false').remove()
+            if($('#true')[0]){
+                return
+            }
+            $('<div id="true">手机号正确</div>').css({color: "green"}).appendTo($('body'))
+        }else {
+            $('#true').remove()
+            if ($('#false').get(0)) {
+                return
+            }
+            $('<div id="false">手机号不正确！</div>').css({color: "red"}).appendTo($('body'))
+        }
+    })
+
+    $('#phone').focus(function () {
+        console.log('聚焦了')
+    })
+</script>
+</html>

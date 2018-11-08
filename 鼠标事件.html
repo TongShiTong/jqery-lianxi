@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container {
+            width: 500px;
+            height: 500px;
+            background: #f00;
+            padding: 50px;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            background: skyblue;
+        }
+    </style>
+</head>
+<body>
+<!--<div class="container">-->
+    <!--<div class="box"></div>-->
+<!--</div>-->
+
+<!--用户名：<input type="text" id="input" name="username">-->
+<!--<button id="btn">提交</button>-->
+
+
+<button id="btn">我是按钮</button>
+<div class="box">
+    随便什么
+</div>
+</body>
+<script src="./jquery.js"></script>
+<script>
+    // $('.container').dblclick(function () {
+    //     console.log('双击事件')
+    // })
+    // $('.container').mouseover(function () {
+    //     console.log('鼠标滑过')
+    // })
+    // $('.container').mouseenter(function () {
+    //     console.log('鼠标进入')
+    // })
+    // $('.container').mousemove(function () {
+    //     console.log('鼠标移动')
+    // })
+    // $('.container').mouseout(function () {
+    //     console.log('鼠标移出')
+    // })
+
+    //键盘事件
+    // $('#input').keyup(function (event) {
+    //     console.log(event)
+    //     console.log(event.keyCode)
+    // })
+    // $('#input').keydown(function (event) {
+    //     console.log('键盘按下')
+    // })
+    // $('#input').keypress(function (event) {
+    //
+    //     console.log('键盘按着')
+    // })
+
+//    表单事件
+//     $('form').submit(function (event) {
+//         //阻止默认事件
+//         event.preventDefault()
+//     })
+
+//    失焦时触发
+//     $('input').change(function (event) {
+//         console.log(event.target.value)
+//     })
+
+    //trigger触发任意事件，用on 监听对象, 自定义事件
+    // $('#btn').click(function () {
+    //     console.log(1);
+    //     $('.box').trigger('suibian', '我是传参内容')
+    // })
+    //
+    // $('.box').on('suibian', function (event, text) {
+    //     console.log(event, text)
+    // })
+
+    $('#btn').click(function () {
+        console.log(1);
+        $('.box').trigger('click', '我是传参内容')
+    })
+
+    $('.box').click(function () {
+        console.log('点击了')
+    })
+
+    $('.box').on('click', function (event, text) {
+        console.log(event, text)
+    })
+
+</script>
+</html>

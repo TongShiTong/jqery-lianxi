@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .container {
+            margin-left: 50px;
+            border: 1px solid #000;
+            width: 500px;
+            height: 400px;
+            position: relative;
+            /*overflow-y: scroll;*/
+            background: red;
+        }
+        .box {
+            border: 1px solid #000;
+            position: absolute;
+            left: 50px;
+            top: 200px;
+            background: #c3c3c3;
+            /*height: 1000px*/
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box"></div>
+    </div>
+    <!--<div class="box"></div>-->
+    <button>按钮</button>
+</body>
+<script src="./jquery.js"></script>
+<script>
+    //x轴和y轴一样
+    // $('.container').scroll(function () {
+    //     console.log($(this).scrollTop());
+    // })
+    // $('button').click(function () {
+    //     $('.container').scrollTop(0)
+    // })
+
+//    原生js
+//     console.log(document.querySelector('.box').offsetLeft);
+//     console.log(document.querySelector('.box').offsetTop);
+//    jq
+//     console.log($('.box').offset());
+//     console.log($('.box').offset().left);
+//     console.log($('.box').offset().top);
+
+    console.log($('.box').offset().left);
+    console.log($('.box').position().left);
+</script>
+</html>

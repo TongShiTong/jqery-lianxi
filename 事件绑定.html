@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>按钮</button>
+</body>
+<script src="./jquery.js"></script>
+<script>
+    //两个同一个事件，第一个会被覆盖
+    //要触发多次用 addEventListener 监听
+    // let btn = document.querySelector('button')
+    // btn.addEventListener('click', function () {
+    //     console.log('事件1')
+    // })
+    // btn.addEventListener('click', function () {
+    //     console.log('事件2')
+    // })
+
+    //jq 现在可以同时触发多个相同事件
+    // $('button').click(function () {
+    //     console.log('事件1')
+    // })
+    // $('button').click(function () {
+    //     console.log('事件2')
+    // })
+
+    //绑定也可以触发多个
+    // $('button').bind('click', function () {
+    //     console.log('事件1')
+    // })
+    // $('button').bind('click', function () {
+    //     console.log('事件2')
+    // })
+
+    //移除绑定
+    // setTimeout(function () {
+    //     $('button').unbind('click')
+    // }, 5000)
+
+    //on可以监听所有事件，还可以事件委托
+    // $('button').on(function () {
+    //
+    // })
+</script>
+</html>
